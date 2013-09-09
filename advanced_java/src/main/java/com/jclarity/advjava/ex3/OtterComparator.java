@@ -12,7 +12,16 @@ public class OtterComparator implements Comparator<Otter> {
 
     @Override
     public int compare(Otter o1, Otter o2) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+        //a bit upside down 
+    	if (o1.getName().equals(o2.getName())) //compare tails
+    	{
+    		return o1.getTailLength() - o2.getTailLength();
+    	}
+    	else // compare names 
+    	{
+    		return o1.getName().compareTo(o2.getName());
+    	}
+    }   
+    
     
 }

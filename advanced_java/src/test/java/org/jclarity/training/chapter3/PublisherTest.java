@@ -39,7 +39,7 @@ public class PublisherTest {
         
         Publisher publisher = new Publisher();
         publisher.add(subscriber);
-
+        
         final String message = "message";
         
         /*
@@ -47,11 +47,15 @@ public class PublisherTest {
          * A subscriber will call receive(message);
          */
         context.checking(new Expectations() {{ 
-            oneOf(subscriber).receive(message); 
+            //oneOf(subscriber).receive(message); 
+        	atMost(2).of(subscriber).receive(message); // changed to allow for 2 messages
         }});
         
         // Execute the code we want to test
         publisher.publish(message);
+        // adding this line fails the test when oneOf is used
+        publisher.publish(message);
+        
     }
     
 }

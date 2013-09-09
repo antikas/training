@@ -26,7 +26,7 @@ public class TicketRevenueTest {
     public void setUp() {
         venueRevenue = new TicketRevenue();
     }
-
+    
     @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void failIfLessThanZeroTicketsAreSold() {
@@ -39,10 +39,11 @@ public class TicketRevenueTest {
         // TODO
     }
 
-    @Ignore
+
     @Test
     public void oneTicketSoldIsThirtyInRevenue() {
-        // TODO
+    	expectedRevenue = new BigDecimal("30");
+        assertEquals(expectedRevenue, venueRevenue.estimateTotalRevenue(1));
     }
     
     @Ignore

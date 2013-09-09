@@ -29,10 +29,11 @@ public class UpdateTest {
         l.add(b.updateText("Goodnight Moon!").build());
         hm.put(ben, l);
         
-        ben.name = "Bill";
+        ben.name = "CGO";
         assertNotNull(hm.get(ben));
         assertEquals(2, hm.get(ben).size());
-        ben.name = "CGO";
+        ben.name = "Bill";
+        //ben.name = "CGO";
         assertNull(hm.get(ben));
     }
 
@@ -47,10 +48,10 @@ public class UpdateTest {
         l.add(b.updateText("Goodnight Moon!").build());
         hm.put(ben, l);
         
-        ben.name = "Bill";
+        //ben.name = "Bill";
         assertNotNull(hm.get(ben));
         assertEquals(2, ((List<Update>)hm.get(ben)).size());
-        ben.name = "CGO";
+        ben.name = "Bill";//ben.name = "CGO";
         assertNull(hm.get(ben));
     }
 

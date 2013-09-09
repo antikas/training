@@ -8,7 +8,9 @@
 
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>org.jclarity.training.chapter11.User</class>
-        <class>org.jclarity.training.chapter11.Otter</class>
+        <!-- <class>com.jclarity.advjava.ex3.Otter</class>
+        
+		<class>org.jclarity.training.chapter11.Otter</class> -->
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
